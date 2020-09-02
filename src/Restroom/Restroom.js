@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-//import "./Restroom.css";
+import classes from './Restroom.module.css';
 
 const StyledDiv = styled.div`
     width: 60%;
@@ -18,11 +17,11 @@ const StyledDiv = styled.div`
 
 const restroom = (props) => {
     return (
-        <StyledDiv>
+        <div className={classes.Restroom}>
             <p>{props.name}</p>
             <p>{props.rating}</p>
             <p>{props.children}</p>
-        </StyledDiv>
+        </div>
     );
 };
 
