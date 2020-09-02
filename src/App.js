@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Restroom from './Restroom/Restroom.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    state = {
+        restrooms: [
+            { id: '1', name: 'Valley Fair Nordstrom Level 2', rating: 5 },
+            { id: '2', name: 'Valley Fair Nordstrom Level 3', rating: 5 },
+            { id: '3', name: 'Valley Fair Floor 1', rating: 4 },
+        ],
+    };
+    render() {
+        let restrooms = (
+            <div>
+                {this.state.restrooms.map((restroom) => {
+                    return (
+                        <Restroom
+                            name={restroom.name}
+                            rating={restroom.rating}
+                            key={restroom.id}
+                        ></Restroom>
+                    );
+                })}
+            </div>
+        );
+        return (
+            <div className="App">
+                <h1>Restroom Rating</h1>
+                {restrooms}
+            </div>
+        );
+    }
 }
 
 export default App;
