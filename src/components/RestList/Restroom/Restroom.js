@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import classes from './Restroom.module.css';
 
-const StyledDiv = styled.div`
+/* const StyledDiv = styled.div`
     width: 60%;
     margin: 15px auto;
     border: 1px solid #eee;
@@ -13,7 +13,7 @@ const StyledDiv = styled.div`
     @media (min-width: 500px) {
         width: 450px;
     }
-`;
+`; */
 
 const restroom = (props) => {
     return (

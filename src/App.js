@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Restroom from './Restroom/Restroom.js';
+import RestList from './components/RestList/RestList';
+import MainPage from './components/MainPage/MainPage';
 
 class App extends Component {
     state = {
@@ -13,20 +14,12 @@ class App extends Component {
     render() {
         let restrooms = (
             <div>
-                {this.state.restrooms.map((restroom) => {
-                    return (
-                        <Restroom
-                            name={restroom.name}
-                            rating={restroom.rating}
-                            key={restroom.id}
-                        ></Restroom>
-                    );
-                })}
+                <RestList restlist={this.state.restrooms} />
             </div>
         );
         return (
             <div className="App">
-                <h1>Restroom Rating</h1>
+                <MainPage />
                 {restrooms}
             </div>
         );
